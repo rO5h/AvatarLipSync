@@ -52,12 +52,12 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/builds.loader.js";
+      var loaderUrl = buildUrl + "/AvatarLipSync.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/builds.data.br",
-        frameworkUrl: buildUrl + "/builds.framework.js.br",
-        codeUrl: buildUrl + "/builds.wasm.br",
+        dataUrl: buildUrl + "/AvatarLipSync.data.unityweb",
+        frameworkUrl: buildUrl + "/AvatarLipSync.framework.js.unityweb",
+        codeUrl: buildUrl + "/AvatarLipSync.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "AvatarLipSync",
@@ -111,16 +111,7 @@
               });
             };
 
-        document.body.appendChild(script);
-
-        window.sendToUnity = function (audioURL) {
-            if (window.unityInstance) {
-                window.unityInstance.SendMessage("AvatarLipSyncController", "PlayAvatar", audioURL);
-                console.log("Sent audio URL to Unity: " + audioURL);
-            } else {
-                console.error("Unity instance is not ready.");
-            }
-        };
+      document.body.appendChild(script);
 
     </script>
   </body>
