@@ -119,7 +119,7 @@
             if (event.data.type === "playAudio") {
                 if (typeof window.unityInstance !== 'undefined' && window.unityInstance !== null) {
                     // Unity instance is ready, send the message
-                    window.unityInstance.SendMessage("GoogleTTS", "SendToGoogleTTS", event.data.value);
+                    window.unityInstance.SendMessage("GoogleTTS", "SendToGoogleTTS", event.data.aiResponse);
                 } else {
                     // Log a message and retry
                     console.error("Unity instance is not ready yet.");
