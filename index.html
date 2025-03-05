@@ -114,10 +114,13 @@
 
         window.addEventListener("message", function (event) {
             if (event.data.type === "playAudio") {
-                window.unityInstance.SendMessage("AvatarLipSyncController", "PlayAvatar", event.data.audioURL);
+                if (window.unityInstance) {
+                    window.unityInstance.SendMessage("AvatarLipSyncController", "PlayAvatar", event.data.audioURL);
+                } else {
+                    console.error("Unity instance is not ready yet.");
+                }
             }
-        });
-
+        });          
 
     </script>
   </body>
