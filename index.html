@@ -114,13 +114,16 @@
 
         window.addEventListener("message", function (event) {
             if (event.data.type === "playAudio") {
-                if (window.unityInstance) {
+                if (typeof window.unityInstance !== 'undefined' && window.unityInstance !== null) {
+                    // Unity instance is ready, send the message
                     window.unityInstance.SendMessage("AvatarLipSyncController", "PlayAvatar", event.data.audioURL);
                 } else {
+                    // Log a message and retry
                     console.error("Unity instance is not ready yet.");
+                    // Optionally retry or handle accordingly
                 }
             }
-        });          
+        });        
 
     </script>
   </body>
