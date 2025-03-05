@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity Web Player | AvatarLipSync</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
+
+    <!-- Add transparent background style here -->
+    <style>
+        body {
+            background-color: transparent;
+            margin: 0;
+            padding: 0;
+        }
+
+        #unity-container {
+            background-color: transparent !important; /* Ensure the container background is also transparent */
+        }
+    </style>
+
+</head>
   <body>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=640 height=400 tabindex="-1"></canvas>
