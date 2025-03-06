@@ -24,7 +24,8 @@
         #unity-canvas {
             width: 100%; /* or fixed size like 1920px */
             height: 100%; /* or fixed size like 1080px */
-            background: transparent !important;            
+            background: transparent !important;
+            overflow:hidden;
         }
 
     </style>
@@ -108,8 +109,8 @@
 
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
+       // canvas.style.width = "100%";
+       // canvas.style.height = "100%";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
